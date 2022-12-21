@@ -106,12 +106,12 @@ class DataLoader(object):
         print(len(plots))    
         #Featurize Plots  
         if feat == 'count':
-            vectorizer = CountVectorizer(min_df=1, binary=True, stop_words='english', decode_error='ignore', strip_accents='ascii', ngram_range=(1,2))
+            vectorizer = CountVectorizer(ngram_range=(1,2))
         elif feat =='lemma':
             vectorizer = CountVectorizer(min_df=1, binary=True,   decode_error='ignore', ngram_range=(1,2) ,\
         tokenizer=LemmaTokenizer(),strip_accents = 'unicode', stop_words = 'english', lowercase = True)
         else:
-            vectorizer = CountVectorizer(min_df=1, binary=True, stop_words='english', decode_error='ignore', strip_accents='ascii', ngram_range=(1,2))
+            vectorizer = CountVectorizer(ngram_range=(1,2))
         
         X = vectorizer.fit_transform(plots)
         valid_feats = np.where(np.sum(X,0)> 2)[1]
