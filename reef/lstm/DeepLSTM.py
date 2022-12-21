@@ -1,6 +1,6 @@
 import torch.nn as nn
 import torch.nn.functional as F
-from keras.layers.embeddings import Embedding
+from keras.layers import Embedding
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
 from sklearn.linear_model import LogisticRegression
