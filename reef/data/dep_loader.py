@@ -30,7 +30,7 @@ def parse_file(filename):
     plots = []
     idx = []
     for i,af in enumerate(rows):
-        row = af.split(',')
+        row = af.split(' ')
         # print(tweet)
         label = row[0]
 #         allaffixes = re.sub(r"@\w+","", row[1])
