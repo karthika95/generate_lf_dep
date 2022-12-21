@@ -35,6 +35,9 @@ def parse_file(filename):
         label = row[0]
 #         allaffixes = re.sub(r"@\w+","", row[1])
         allaffixes = row[1].split('+')
+        string=''
+        for a in allaffixes:
+            string=string+' '+a
         
 #         if 'ham' in label:
 #             plots.append(allaffixes)
@@ -46,7 +49,7 @@ def parse_file(filename):
 #             idx.append(i)
 #         else:
 #             continue  
-        plots.append(allaffixes)
+        plots.append(string)
         gt.append(1)
         idx.append(i)
 
